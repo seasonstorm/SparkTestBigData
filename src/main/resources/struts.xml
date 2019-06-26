@@ -4,7 +4,6 @@
         "http://struts.apache.org/dtds/struts-2.0.dtd">
         
 <struts>
-
     <package name="json" extends="json-default" namespace="/">
         <action name="searchResult" class="cn.edu.sparkgroup.hhy.searchResultAction">
             <result type="json">
@@ -13,7 +12,6 @@
             </result>
         </action>
     </package>
-
     <package name="default" namespace="/" extends="struts-default">
         <action name="firstpagetest" class="personAction">
             <result>/views/firstpagetest.jsp</result>
@@ -25,6 +23,5 @@
             <result>/views/searchMovie.jsp</result>
         </action>
     </package>
-    <!--<include file="movie.xml"></include>-->
     <constant name="struts.action.excludePattern" value="/static/.*?" />
 </struts>
