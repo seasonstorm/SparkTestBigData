@@ -5,8 +5,16 @@
 <struts>
     <constant name="struts.action.excludePattern" value="/static/.*?" />
     <package name="default" namespace="/" extends="struts-default">
-        <action name="firstpagetest" class="personAction">
+        <action name="firstpagetest" class="showAction">
             <result>/views/thirdquestion.jsp</result>
+        </action> 
+<!--         <action name="getdealstaticsAction" class="getdealstaticsAction">
+            <result type="json">
+				<param name="root">resultdata</param>
+			</result>
+        </action>  -->  
+        <action name="getdealstaticsAction" class="getdealstaticsAction">
+           <result>/index.jsp</result>
         </action>    
     </package>
     
