@@ -14,6 +14,15 @@ public class searchResultAction extends ActionSupport {
     private String limit = "10";
     private String[] movies = null;
     private ArrayList<moviesBean> res=new ArrayList<moviesBean>();
+
+    public HashMap<String, Object> getDataMap() {
+        return dataMap;
+    }
+
+    public void setDataMap(HashMap<String, Object> dataMap) {
+        this.dataMap = dataMap;
+    }
+
     private HashMap<String,Object> dataMap=new HashMap<String,Object>();
     public String getKeyword() {
         return keyword;
@@ -56,7 +65,7 @@ public class searchResultAction extends ActionSupport {
         System.out.println(keyword);
         String[] args = {keyword, page, limit};
         movies= sparkbigdata.q1.search(args);
-        System.out.println(limit+"  "+page+" "+movies.length);
+        System.out.println(page+"  "+limit+" "+movies.length);
         for (int i=0;i<movies.length;i++){
             moviesBean m=new moviesBean();
             System.out.println(i);
