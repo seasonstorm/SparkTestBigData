@@ -7,6 +7,9 @@
         <action name="firstpagetest" class="cn.edu.sparkgroup.hpz.ShowAction">
             <result>/views/thirdquestion.jsp</result>
         </action>
+        <action name="setScore" class="cn.edu.sparkgroup.hhy.setScoreAction">
+            <result>/views/setScore.jsp</result>
+        </action>
         <action name="markMovie" class="cn.edu.sparkgroup.hhy.movieAction">
             <result>/views/markMovie.jsp</result>
         </action>
