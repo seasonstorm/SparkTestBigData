@@ -3,16 +3,27 @@
         "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
         "http://struts.apache.org/dtds/struts-2.0.dtd">
 <struts>
-    <constant name="struts.action.excludePattern" value="/static/.*?" />
     <package name="default" namespace="/" extends="struts-default,json-default">
         <action name="firstpagetest" class="showAction">
             <result>/views/thirdquestion.jsp</result>
-        </action> 
+        </action>
+        <action name="markMovie" class="cn.edu.sparkgroup.hhy.movieAction">
+            <result>/views/markMovie.jsp</result>
+        </action>
+        <action name="searchMovie" class="cn.edu.sparkgroup.hhy.searchMovieAction">
+            <result>/views/searchMovie.jsp</result>
+        </action>
+        <action name="searchResult" class="cn.edu.sparkgroup.hhy.searchResultAction">
+            <result type="json">
+                <!-- 这里指定将被Struts2序列化的属性，该属性在action中必须有对应的getter方法 -->
+                <param name="root">dataMap</param>
+            </result>
+        </action>
         <action name="getdealstaticsAction" class="getdealstaticsAction">
             <result type="json">
-				<param name="root">totalmap</param>
-			</result>
-        </action>     
+                <param name="root">totalmap</param>
+            </result>
+        </action>
     </package>
-    
+    <constant name="struts.action.excludePattern" value="/static/.*?" />
 </struts>
