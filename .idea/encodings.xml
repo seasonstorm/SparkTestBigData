@@ -3,5 +3,6 @@
   <component name="Encoding" addBOMForNewFiles="with NO BOM">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/cn/edu/sparkgroup/hpz/GetdealstaticsAction.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/edu/sparkgroup/hpz/ShowAction.java" charset="GBK" />
   </component>
 </project>

@@ -73,6 +73,7 @@ public class searchResultAction extends ActionSupport {
                 m.setMovieId(Integer.valueOf(movies[i].split(",")[0]));
                 m.setTitle(movies[i].split(",")[1]);
                 m.setGenres(movies[i].split(",")[2]);
+                m.setHtml("<div><div id=\"test4\"></div></div>");
                 res.add(m);
             }
         }

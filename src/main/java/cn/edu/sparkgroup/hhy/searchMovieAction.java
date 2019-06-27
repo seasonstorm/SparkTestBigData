@@ -6,7 +6,15 @@ import org.springframework.stereotype.Controller;
 
 @Controller
 public class searchMovieAction extends ActionSupport{
+    public String getKeyword() {
+        return keyword;
+    }
 
+    public void setKeyword(String keyword) {
+        this.keyword = keyword;
+    }
+
+    private String keyword=null;
     /**
      *
      */
