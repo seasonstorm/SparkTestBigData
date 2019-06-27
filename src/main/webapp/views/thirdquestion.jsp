@@ -21,7 +21,10 @@ body,html{
 </style>
 </head>
 <body>
-<div id="main" style="height:800px;width:1000px;margin:auto;"></div>
+<%
+    String path=request.getContextPath();
+%>
+<div id="main" style="height:30em;width:1000px;margin:50px auto;"></div>
 </body>
 <script>
 $(function(){
@@ -79,7 +82,7 @@ $(function(){
 		
 	$.ajax({
         type: "POST",
-        url: "/SparkTestBigData/getdealstaticsAction",
+        url: "<%=path%>/getdealstaticsAction",
         dataType: "json",
         success: (data)=>{
 			for (let i in data.types) {

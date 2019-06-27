@@ -28,5 +28,15 @@ public class moviesBean {
     }
 
     private String title=null;
+
+    public String getHtml() {
+        return html;
+    }
+
+    public void setHtml(String html) {
+        this.html = html;
+    }
+
     private String genres=null;
+    private String html=null;
 }

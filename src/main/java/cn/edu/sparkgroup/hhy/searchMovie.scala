@@ -21,10 +21,9 @@ object q1  {
     //    conf.set("spark.driver.host", "192.168.125.130")
     //    conf.set("spark.driver.port", "4040")
     val sc = new SparkContext(conf)
-    var data = sc.textFile("hdfs://master:9000/sparkData/movies.csv")
+    var data = sc.textFile("C:\\Users\\Administrator\\Desktop\\Spark\\db\\ml-latest\\movies.csv")
     val header=data.first()
     val pattern = new Regex(".*"+args(0)+".*")
-//    var movies=new ArrayBuffer[String]()
     val res=new ArrayBuffer[String]()
     val movies=data.filter( row=>row != header).filter(row =>(pattern findAllIn row).mkString(" ")!="").collect()
     for(i <-  0 to movies.length-1){
@@ -35,6 +34,6 @@ object q1  {
 //    movies.foreach(println)
 //    println("111111")
     sc.stop()
-    return res.toArray
+    return  movies
   }
 }
