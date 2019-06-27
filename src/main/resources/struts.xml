@@ -13,13 +13,13 @@
         </action>
     </package>
     <package name="default" namespace="/" extends="struts-default">
-        <action name="firstpagetest" class="personAction">
+        <action name="firstpagetest" class="cn.edu.sparkgroup.hpz.personAction">
             <result>/views/firstpagetest.jsp</result>
         </action>
-        <action name="markMovie" class="movieAction">
+        <action name="markMovie" class="cn.edu.sparkgroup.hhy.movieAction">
             <result>/views/markMovie.jsp</result>
         </action>
-        <action name="searchMovie" class="searchMovieAction">
+        <action name="searchMovie" class="cn.edu.sparkgroup.hhy.searchMovieAction">
             <result>/views/searchMovie.jsp</result>
         </action>
     </package>
