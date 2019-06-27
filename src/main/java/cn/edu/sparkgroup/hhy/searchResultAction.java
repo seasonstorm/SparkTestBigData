@@ -4,8 +4,9 @@ import com.opensymphony.xwork2.ActionSupport;
 import org.springframework.stereotype.Controller;
 import  cn.edu.sparkgroup.bean.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
+import org.apache.struts2.ServletActionContext;
+import com.opensymphony.xwork2.ActionContext;
 
 @Controller
 public class searchResultAction extends ActionSupport {
@@ -63,17 +64,20 @@ public class searchResultAction extends ActionSupport {
 
     public String execute() throws Exception {
         System.out.println(keyword);
-        String[] args = {keyword, page, limit};
+        String[] args = {keyword};
         movies= sparkbigdata.q1.search(args);
+        ServletActionContext.getRequest().setCharacterEncoding("utf-8");
+        ServletActionContext.getResponse().setCharacterEncoding("utf-8");
         System.out.println(page+"  "+limit+" "+movies.length);
         for (int i=0;i<movies.length;i++){
-            if(i >= Integer.valueOf(page)*Integer.valueOf(limit) && i<((Integer.valueOf(page)+1)*Integer.valueOf(limit))){
+            if(i >= (Integer.valueOf(page)-1)*Integer.valueOf(limit) && i<(Integer.valueOf(page)*Integer.valueOf(limit))){
                 moviesBean m=new moviesBean();
                 System.out.println(i);
-                m.setMovieId(Integer.valueOf(movies[i].split(",")[0]));
-                m.setTitle(movies[i].split(",")[1]);
-                m.setGenres(movies[i].split(",")[2]);
-                m.setHtml("<div><div id=\"test4\"></div></div>");
+               String data=movies[i];
+                m.setMovieId(Integer.valueOf(data.split(",")[0]));
+                m.setTitle(data.split(",")[1]);
+                m.setGenres(data.split(",")[2]);
+                m.setHtml("<button type=\"button\" class=\"layui-btn layui-btn-normal\"  style='height:25px;line-height:25px;' onclick=jump(\"/setScore?id="+Integer.valueOf(movies[i].split(",")[0])+"\")>set score</button>");
                 res.add(m);
             }
         }

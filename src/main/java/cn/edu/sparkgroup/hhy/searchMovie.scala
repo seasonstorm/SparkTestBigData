@@ -16,7 +16,7 @@ object q1  {
     //    System.setProperty("spark.driver.port", "7077");
 
     System.setProperty("HADOOP_USER_NAME","hdfs");
-    val conf = new SparkConf().setMaster("local[*]").setAppName("q1")
+    val conf = new SparkConf().setMaster("local[*]").setAppName(scala.util.Random.nextInt(100).toString)
     //    conf.set("spark.driver.host", "localhost");
     //    conf.set("spark.driver.host", "192.168.125.130")
     //    conf.set("spark.driver.port", "4040")
@@ -26,13 +26,6 @@ object q1  {
     val pattern = new Regex(".*"+args(0)+".*")
     val res=new ArrayBuffer[String]()
     val movies=data.filter( row=>row != header).filter(row =>(pattern findAllIn row).mkString(" ")!="").collect()
-    for(i <-  0 to movies.length-1){
-      if(i >= ((args(1).toInt)*args(2).toInt) && i<((args(1).toInt+1)*args(2).toInt)){
-        res+=movies(i)
-      }
-    }
-//    movies.foreach(println)
-//    println("111111")
     sc.stop()
     return  movies
   }
