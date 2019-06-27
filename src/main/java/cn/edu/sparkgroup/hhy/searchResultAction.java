@@ -67,17 +67,18 @@ public class searchResultAction extends ActionSupport {
         movies= sparkbigdata.q1.search(args);
         System.out.println(page+"  "+limit+" "+movies.length);
         for (int i=0;i<movies.length;i++){
-            moviesBean m=new moviesBean();
-            System.out.println(i);
-            m.setMovieId(Integer.valueOf(movies[i].split(",")[0]));
-            m.setTitle(movies[i].split(",")[1]);
-            m.setGenres(movies[i].split(",")[2]);
-            res.add(m);
+            if(i >= Integer.valueOf(page)*Integer.valueOf(limit) && i<((Integer.valueOf(page)+1)*Integer.valueOf(limit))){
+                moviesBean m=new moviesBean();
+                System.out.println(i);
+                m.setMovieId(Integer.valueOf(movies[i].split(",")[0]));
+                m.setTitle(movies[i].split(",")[1]);
+                m.setGenres(movies[i].split(",")[2]);
+                res.add(m);
+            }
         }
         dataMap.put("code",0);
+        dataMap.put("count",movies.length);
         dataMap.put("data",res);
-        System.out.println("111111"+res.size());
-//        System.out.println(limit+"  "+page+"  "+movies.length);
         return SUCCESS;
     }
 }

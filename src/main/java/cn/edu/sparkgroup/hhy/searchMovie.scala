@@ -34,6 +34,6 @@ object q1  {
 //    movies.foreach(println)
 //    println("111111")
     sc.stop()
-    return res.toArray
+    return  movies
   }
 }
