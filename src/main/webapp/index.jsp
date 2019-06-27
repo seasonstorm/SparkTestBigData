@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-Ê×Ò³
+<a href="/SparkTestBigData/firstpagetest">Öù×´Í¼</a>
 </body>
 </html>
