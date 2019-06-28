@@ -14,6 +14,7 @@
 }
 body,html{
 	height:100%;
+    width: 100%;
 	overflow:hidden;
 }
 
@@ -23,6 +24,12 @@ body,html{
 <%
     String path=request.getContextPath();
 %>
+
+<div id="loadingpicture" style="width:200px;height: 150px;position: absolute;left:50%;margin-left:-100px;top: 50%;margin-top: -75px;text-align: center">
+    <span>数据加载中...</span>
+    <img style="width: 200px;height: 150px;" alt="加载中..." src="<%=request.getContextPath()%>/Images/loading.gif"/>
+</div>
+
 <div id="main" style="height:30em;width:1000px;margin:50px auto;"></div>
 </body>
 <script>
@@ -81,20 +88,21 @@ $(function(){
 		
 	$.ajax({
         type: "POST",
-        url: "<%=path%>/getdealstaticsAction",
+        url: "<%=path%>/getonlineDealstaticsAction",
         dataType: "json",
         success: (data)=>{
 			for (let i in data.types) {
-				option.xAxis[0].data.push(data.types[i]); 		   
+				option.xAxis[0].data.push(data.types[i]);
 			}
 			for (let i in data.boys) {
-				option.series[0].data.push(data.boys[i]); 		   
+				option.series[0].data.push(data.boys[i]);
 			}
 			for (let i in data.girls) {
-				option.series[1].data.push(data.girls[i]); 		   
-			}  	
+				option.series[1].data.push(data.girls[i]);
+			}
+			$("#loadingpicture").css("display","none");
 			var myChart = echarts.init(document.getElementById('main'));
-			myChart.setOption(option);	
+			myChart.setOption(option);
         }
     });
 	
