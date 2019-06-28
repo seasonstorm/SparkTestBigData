@@ -65,7 +65,7 @@ public class searchResultAction extends ActionSupport {
     public String execute() throws Exception {
         System.out.println(keyword);
         String[] args = {keyword};
-        movies= sparkbigdata.q1.search(args);
+        movies= cn.edu.sparkgroup.hhy.q1.search(args);
         ServletActionContext.getRequest().setCharacterEncoding("utf-8");
         ServletActionContext.getResponse().setCharacterEncoding("utf-8");
         System.out.println(page+"  "+limit+" "+movies.length);

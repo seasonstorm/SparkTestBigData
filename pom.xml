@@ -258,11 +258,15 @@
             <scope>test</scope>
         </dependency>
 
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.6</version>
+        </dependency>
 
     </dependencies>
     <build>
         <finalName>sparkbigdata</finalName>
-         <pluginManagement>
         <plugins>
             <plugin>
                 <groupId>org.scala-tools</groupId>
@@ -278,6 +282,5 @@
                 </executions>
             </plugin>
         </plugins>
-        </pluginManagement>
     </build>
 </project>

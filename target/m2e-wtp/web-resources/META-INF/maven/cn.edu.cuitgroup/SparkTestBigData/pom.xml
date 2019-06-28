@@ -262,7 +262,6 @@
     </dependencies>
     <build>
         <finalName>sparkbigdata</finalName>
-         <pluginManagement>
         <plugins>
             <plugin>
                 <groupId>org.scala-tools</groupId>
@@ -278,6 +277,5 @@
                 </executions>
             </plugin>
         </plugins>
-        </pluginManagement>
     </build>
 </project>

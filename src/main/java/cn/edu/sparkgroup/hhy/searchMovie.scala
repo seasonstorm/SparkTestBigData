@@ -1,4 +1,4 @@
-package sparkbigdata
+package cn.edu.sparkgroup.hhy
 
 import org.apache.log4j.Level
 import org.apache.log4j.Logger
@@ -15,7 +15,7 @@ object q1  {
     //    System.setProperty("spark.driver.host", "192.168.125.130");
     //    System.setProperty("spark.driver.port", "7077");
 
-    System.setProperty("HADOOP_USER_NAME","hdfs");
+    System.setProperty("HADOOP_USER_NAME","hdfs")
     val conf = new SparkConf().setMaster("local[*]").setAppName(scala.util.Random.nextInt(100).toString)
     //    conf.set("spark.driver.host", "localhost");
     //    conf.set("spark.driver.host", "192.168.125.130")
@@ -27,6 +27,6 @@ object q1  {
     val res=new ArrayBuffer[String]()
     val movies=data.filter( row=>row != header).filter(row =>(pattern findAllIn row).mkString(" ")!="").collect()
     sc.stop()
-    return  movies
+    movies
   }
 }
