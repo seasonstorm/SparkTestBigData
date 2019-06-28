@@ -1,5 +1,6 @@
 package cn.edu.sparkgroup.hpz;
 
+
 import com.opensymphony.xwork2.ActionSupport;
 import org.springframework.stereotype.Controller;
 
@@ -13,6 +14,6 @@ public class ShowAction extends ActionSupport{
 	public String execute() throws Exception{	
 		return SUCCESS;
 	}
-	
+
 
 }

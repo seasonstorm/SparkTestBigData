@@ -30,6 +30,12 @@
                 <param name="root">totalmap</param>
             </result>
         </action>
+         <action name="getonlineDealstaticsAction" class="onlineDealstaticsAction">
+             <result type="json">
+                 <param name="root">totalmap</param>
+             </result>
+        </action>
     </package>
     <constant name="struts.action.excludePattern" value="/static/.*?" />
+
 </struts>

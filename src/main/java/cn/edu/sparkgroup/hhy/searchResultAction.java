@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import org.apache.struts2.ServletActionContext;
-import com.opensymphony.xwork2.ActionContext;
 
 @Controller
 public class searchResultAction extends ActionSupport {
@@ -64,12 +63,11 @@ public class searchResultAction extends ActionSupport {
      *
      */
     private static final long serialVersionUID = 1L;
-
-    public String execute() {
+    public String execute() throws Exception {
         try {
             System.out.println(keyword);
             String[] args = {keyword};
-            movies = sparkbigdata.q1.search(args);
+            movies = cn.edu.sparkgroup.hhy.q1.search(args);
             ServletActionContext.getRequest().setCharacterEncoding("utf-8");
             ServletActionContext.getResponse().setCharacterEncoding("utf-8");
             System.out.println(page + "  " + limit + " " + movies.length);
@@ -84,12 +82,12 @@ public class searchResultAction extends ActionSupport {
                     m.setHtml("<button type=\"button\" class=\"layui-btn layui-btn-normal\"  style='height:25px;line-height:25px;' onclick=jump(\"/setScore?id=" + Integer.valueOf(movies[i].split(",")[0]) + "\")>set score</button>");
                     res.add(m);
                 }
+                dataMap.put("code", 0);
+                dataMap.put("count", movies.length);
+                dataMap.put("data", "");
+                dataMap.put("data", res);
             }
-            dataMap.put("code", 0);
-            dataMap.put("count", movies.length);
-            dataMap.put("data", "");
-            dataMap.put("data", res);
-        } catch (Exception e) {
+        }catch (Exception e) {
             dataMap = new HashMap<String, Object>();
             dataMap.put("code", 1);
             dataMap.put("count", 0);

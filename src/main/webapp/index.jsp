@@ -11,5 +11,6 @@
     <a href="<%=path%>/firstpagetest">Öù×´Í¼</a>
     <a href="<%=path%>/searchMovieMain">ËÑË÷µçÓ°</a>
 </center>
+
 </body>
 </html>
