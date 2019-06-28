@@ -17,6 +17,7 @@ object q1  {
 
     System.setProperty("HADOOP_USER_NAME","hdfs");
     val conf = new SparkConf().setMaster("local[*]").setAppName(scala.util.Random.nextInt(100).toString)
+    conf.set("spark.driver.allowMultipleContexts","true")
     //    conf.set("spark.driver.host", "localhost");
     //    conf.set("spark.driver.host", "192.168.125.130")
     //    conf.set("spark.driver.port", "4040")
