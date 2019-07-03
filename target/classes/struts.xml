@@ -7,6 +7,18 @@
         <action name="firstpagetest" class="cn.edu.sparkgroup.hpz.ShowAction">
             <result>/views/thirdquestion.jsp</result>
         </action>
+
+        <action name="sparkstreamingshowaction" class="sparkStreamingShowAction">
+            <result>/views/polygonalchart.jsp</result>
+        </action>
+
+
+        <action class="uploadFileDealAction" method="uploadFile" name="uploadFileDealAction">
+            <result name="input">/views/error.jsp</result>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+        </action>
+
+
         <action name="setScore" class="cn.edu.sparkgroup.hhy.setScoreAction">
             <result>/views/setScore.jsp</result>
         </action>
@@ -37,5 +49,5 @@
         </action>
     </package>
     <constant name="struts.action.excludePattern" value="/static/.*?" />
-
+    <constant name="struts.multipart.maxSize" value="20971520"></constant>
 </struts>

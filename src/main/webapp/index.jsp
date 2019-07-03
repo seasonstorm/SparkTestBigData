@@ -10,6 +10,7 @@
 <center>
     <a href="<%=path%>/firstpagetest">柱状图</a>
     <a href="<%=path%>/searchMovieMain">搜索电影</a>
+    <a href="<%=path%>/sparkstreamingshowaction">实时折线图</a>
 </center>
 
 </body>

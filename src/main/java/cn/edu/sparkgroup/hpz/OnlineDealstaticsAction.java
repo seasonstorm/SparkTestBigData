@@ -32,7 +32,7 @@ public class OnlineDealstaticsAction extends ActionSupport{
 		List<String> typelist=new ArrayList<String>();
 		List<Double>boyslist=new ArrayList<Double>();
 		List<Double>girlslist=new ArrayList<Double>();
-		java.lang.String[][]totalarr=cn.edu.sparkgroup.hpz.test.getstatics();
+		java.lang.String[][]totalarr=test.getstatics();
 
 		for(int i=0;i<totalarr[0].length;i++){
 			typelist.add(totalarr[0][i]);
