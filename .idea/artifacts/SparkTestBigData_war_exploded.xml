@@ -7,6 +7,7 @@
           <element id="module-output" name="SparkTestBigData" />
         </element>
         <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: org.springframework:spring-websocket:4.3.8.RELEASE" />
           <element id="library" level="project" name="Maven: javax.servlet:jstl:1.2" />
           <element id="library" level="project" name="Maven: org.apache.struts:struts2-json-plugin:2.3.16" />
           <element id="library" level="project" name="Maven: log4j:log4j:1.2.12" />
@@ -229,6 +230,9 @@
           <element id="library" level="project" name="Maven: ognl:ognl:3.1.17" />
           <element id="library" level="project" name="Maven: org.apache.struts:struts2-core:2.3.35" />
           <element id="library" level="project" name="Maven: org.apache.struts.xwork:xwork-core:2.3.35" />
+          <element id="library" level="project" name="Maven: asm:asm:3.3" />
+          <element id="library" level="project" name="Maven: asm:asm-commons:3.3" />
+          <element id="library" level="project" name="Maven: asm:asm-tree:3.3" />
           <element id="library" level="project" name="Maven: org.springframework:spring-orm:3.2.18.RELEASE" />
           <element id="library" level="project" name="Maven: org.apache.struts:struts2-spring-plugin:2.3.35" />
           <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.6" />
