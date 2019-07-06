@@ -39,8 +39,11 @@ public class UploadFileDealAction  extends ActionSupport {
     }
 
     public void uploadFile() throws IOException {
-        String path = ServletActionContext.getServletContext().getRealPath("/upload");
+//        String path = ServletActionContext.getServletContext().getRealPath("/upload");
+        String path="D://upload";
+
         String filename= RandomStringUtils.randomAlphanumeric(20);
+
         String tailfilename=uploadFileName.substring(uploadFileName.lastIndexOf("."));
         //创建一个服务器端的文件
         File dest = new File(path,filename+tailfilename);

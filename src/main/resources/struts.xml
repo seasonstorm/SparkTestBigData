@@ -48,6 +48,7 @@
              </result>
         </action>
     </package>
-    <constant name="struts.action.excludePattern" value="/static/.*?" />
-    <constant name="struts.multipart.maxSize" value="20971520"></constant>
+    <constant name="struts.action.excludePattern" value="/static/.*,/ws/.*,ws://.*?" />
+    <constant name="struts.multipart.maxSize" value="20971520"/>
+
 </struts>

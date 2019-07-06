@@ -1,6 +1,9 @@
 package cn.edu.sparkgroup.hpz;
 
 
+import org.apache.struts2.ServletActionContext;
+import redis.clients.jedis.Jedis;
+
 import javax.websocket.OnClose;
 import javax.websocket.OnMessage;
 import javax.websocket.OnOpen;
@@ -14,15 +17,14 @@ public class AsTimeWebSocketAction {
     public void onMessage(String message, Session session)
             throws IOException, InterruptedException
     {
+        Jedis jedis=new Jedis("localhost");
         System.out.println("***************");
         session.getBasicRemote().sendText("  this is  message");
-        int sentMessage = 0;
-        while(sentMessage < 3){
-            Thread.sleep(5000);
-            session.getBasicRemote().sendText(" this is one mess " + sentMessage);
-            sentMessage++;
+        while(true){
+            Thread.sleep(2500);
+            session.getBasicRemote().sendText(jedis.get("flag").toString());
+            System.out.println(jedis.get("flag").toString());
         }
-        session.getBasicRemote().sendText(" message send over ");
     }
 
     @OnOpen
